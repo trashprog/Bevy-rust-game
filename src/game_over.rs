@@ -272,10 +272,10 @@ pub fn final_score_checker(final_score : Res<FinalScore>, mut text_query: Query<
     let time_survived = final_score.scores.last().unwrap().1;
     for mut text in text_query.iter_mut(){
         let result = match time_survived {
-            time_survived if time_survived < 120 => "You fking suck",
-            time_survived if time_survived < 240 => "Not bad",
-            time_survived if time_survived < 600 => "Good job chigga",
-            _ => "Get a life" 
+            time_survived if time_survived < 120 => "Better luck next time",
+            time_survived if time_survived < 240 => "Nice",
+            time_survived if time_survived < 600 => "Fantastic score",
+            _ => "You are awesome" 
         };
         text.sections[0].value = format!("{}", result)
 
